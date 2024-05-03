@@ -1,0 +1,19 @@
+
+.textColor{
+    color: red;
+    margin-bottom: 0;
+    font-size: 14px;
+
+}
+
+.forgot_password{
+    display: flex;
+    justify-content: flex-end;
+}
+.forgot_password a {
+    color: #044675;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+}
