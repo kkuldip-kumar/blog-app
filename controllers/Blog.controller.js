@@ -306,9 +306,9 @@ export const removeOneBlog = asyncHandler(async (req, res, next) => {
     return res.status(400).json({ message: "blogId is required" });
   }
   try {
-    if (req.user.role !== "admin") {
-      return res.status(403).json({ message: "unauthorize user" });
-    }
+    // if (req.user.role !== "admin") {
+    //   return res.status(403).json({ message: "unauthorize user" });
+    // }
     const { blogId } = req.params;
     const blogID = new mongoose.Types.ObjectId(blogId);
     const foundDoc = await Blog.findById(blogID);
