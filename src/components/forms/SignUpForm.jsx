@@ -25,11 +25,12 @@ export const SignUpForm = () => {
     setLoading(true);
     const { confirmPassword, ...rest } = data;
     try {
-      const { data: resData } = await signUpUser(rest);
-      if (resData) {
-        reset({});
-        navigate("/auth/login");
+      const { data: resData, error: errData } = await signUpUser(rest);
+      if (errData) {
+        throw new Error(errData.data);
       }
+      reset({});
+      navigate("/auth/login");
     } catch (error) {
       console.error("Registration error:", error);
     } finally {

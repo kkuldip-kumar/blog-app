@@ -34,7 +34,8 @@ export const authSlice = createSlice({
       (state, { payload }) => {
         setToken(payload.api_token);
         state.isLoggedIn = true;
-        state.currentUser = action.payload.user;
+        console.log(payload.user);
+        state.currentUser = payload.user;
       }
     );
   },

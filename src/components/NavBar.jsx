@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 
 export const NavBar = () => {
   const { isLoggedIn } = useSelector((state) => state.auth);
+  console.log(isLoggedIn, typeof isLoggedIn);
   return (
     <nav className="navbar navbar-expand-lg">
       <div className="container-fluid">
@@ -22,17 +23,6 @@ export const NavBar = () => {
                     Blogs
                   </Link>
                 </li>
-                {isLoggedIn ? (
-                  <li className="nav-item">
-                    <Link
-                      className="nav-link active"
-                      aria-current="page"
-                      to="/admin/users"
-                    >
-                      Users
-                    </Link>
-                  </li>
-                ) : null}
               </ul>
             </div>
           </div>

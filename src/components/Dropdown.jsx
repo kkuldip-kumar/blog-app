@@ -21,7 +21,12 @@ export const Dropdown = () => {
       <ul className="dropdown-menu">
         <li>
           <Link className="dropdown-item" to="/admin/blogs">
-            Dashboard
+            All Blogs
+          </Link>
+        </li>
+        <li>
+          <Link className="dropdown-item" to="/admin/users">
+            All users
           </Link>
         </li>
         <li onClick={onLogout}>

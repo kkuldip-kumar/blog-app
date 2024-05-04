@@ -25,11 +25,14 @@ export const LoginForm = () => {
   const onSubmit = async (data, e) => {
     setLoading(true);
     try {
-      const { data: resData } = await loginUser(data);
-      if (resData) {
-        reset({});
-        navigate("/");
+      const { data: resData, error: errData } = await loginUser(data);
+
+      if (errData) {
+        throw new Error(errData);
       }
+
+      reset({});
+      navigate("/");
     } catch (error) {
       console.error("Registration error:", error);
     } finally {

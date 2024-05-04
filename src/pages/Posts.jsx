@@ -3,6 +3,7 @@ import { BlogListWrapper } from "./blog/BlogListWrapper";
 import style from "./blog/blog.module.css";
 import { useGetAllBlogsQuery } from "src/store/blogs/blogService";
 import { Loader } from "src/components/Loader";
+import { ErrorsPage } from "src/components/ErrorsPage";
 
 export const Posts = () => {
   const { data, error, isLoading } = useGetAllBlogsQuery();
@@ -17,7 +18,9 @@ export const Posts = () => {
       <div className="container">
         {data && Array.isArray(data.data) ? (
           <BlogListWrapper blogs={data.data} />
-        ) : null}
+        ) : (
+          <p> No data</p>
+        )}
       </div>
     </>
   );

@@ -14,7 +14,7 @@ const BlogsActionCell = ({ id }) => {
   const editItem = async () => {
     setIdForUpdate(id);
   };
-  console.log("cc", currentUser);
+  // console.log("cc", currentUser._doc);
   return (
     <>
       <div className="action_drp_dwn">
@@ -44,13 +44,11 @@ const BlogsActionCell = ({ id }) => {
                 Edit
               </a>
             </li>
-            {currentUser.role == "admin" ? (
-              <li>
-                <a className="dropdown-item pointer" onClick={deleteItem}>
-                  Delete
-                </a>
-              </li>
-            ) : null}
+            <li>
+              <a className="dropdown-item pointer" onClick={deleteItem}>
+                Delete
+              </a>
+            </li>
           </ul>
         </div>
       </div>
