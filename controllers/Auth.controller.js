@@ -29,9 +29,9 @@ export const loginUser = asyncHandler(async (req, res, next) => {
       { id: foundUser._id },
       process.env.ACCESS_TOKEN_SECRET
     );
-
+    const { password, ...userData } = foundUser;
     const responseData = {
-      user: foundUser,
+      user: userData,
       api_token: accessToken,
     };
     res.json(responseData);
